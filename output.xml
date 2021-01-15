@@ -1,0 +1,504 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.2 (Python 3.9.1 on darwin)" generated="20210115 12:45:51.329" rpa="false">
+<suite id="s1" name="Tests" source="/Users/oleksandrshpachuk/AQA/Robot/tests">
+<suite id="s1-s1" name="LoginTesting" source="/Users/oleksandrshpachuk/AQA/Robot/tests/LoginTesting.robot">
+<kw name="Open Browser" library="SeleniumLibrary" type="setup">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+</arguments>
+<msg timestamp="20210115 12:45:51.559" level="INFO">Opening browser 'chrome' to base url 'http://openncart.herokuapp.com/'.</msg>
+<status status="PASS" starttime="20210115 12:45:51.558" endtime="20210115 12:46:10.786"></status>
+</kw>
+<test id="s1-s1-t1" name="LoginButtonClick">
+<kw name="Set Screenshot Directory" library="SeleniumLibrary" type="setup">
+<doc>Sets the directory for captured screenshots.</doc>
+<arguments>
+<arg>Screenshots</arg>
+</arguments>
+<status status="PASS" starttime="20210115 12:46:10.789" endtime="20210115 12:46:10.790"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>class=dropdown</arg>
+</arguments>
+<msg timestamp="20210115 12:46:10.790" level="INFO">Clicking element 'class=dropdown'.</msg>
+<status status="PASS" starttime="20210115 12:46:10.790" endtime="20210115 12:46:11.088"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<arguments>
+<arg>dropdown-click.png</arg>
+</arguments>
+<msg timestamp="20210115 12:46:12.018" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Screenshots/dropdown-click.png"&gt;&lt;img src="Screenshots/dropdown-click.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210115 12:46:11.089" endtime="20210115 12:46:12.018"></status>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<arguments>
+<arg>css:div#top-links li.dropdown a</arg>
+<arg>aria-expanded</arg>
+</arguments>
+<assign>
+<var>${dropdown-opened}</var>
+</assign>
+<msg timestamp="20210115 12:46:12.035" level="INFO">${dropdown-opened} = true</msg>
+<status status="PASS" starttime="20210115 12:46:12.018" endtime="20210115 12:46:12.035"></status>
+</kw>
+<kw name="Log Many" library="BuiltIn">
+<doc>Logs the given messages as separate entries using the INFO level.</doc>
+<arguments>
+<arg>Dropdown is opened:</arg>
+<arg>${dropdown-opened}</arg>
+</arguments>
+<msg timestamp="20210115 12:46:12.036" level="INFO">Dropdown is opened:</msg>
+<msg timestamp="20210115 12:46:12.036" level="INFO">true</msg>
+<status status="PASS" starttime="20210115 12:46:12.035" endtime="20210115 12:46:12.036"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${dropdown-opened}' == 'true'</arg>
+<arg>Click Element</arg>
+<arg>css:ul.dropdown-menu-right &gt; li:nth-child(2)</arg>
+</arguments>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>css:ul.dropdown-menu-right &gt; li:nth-child(2)</arg>
+</arguments>
+<msg timestamp="20210115 12:46:12.037" level="INFO">Clicking element 'css:ul.dropdown-menu-right &gt; li:nth-child(2)'.</msg>
+<status status="PASS" starttime="20210115 12:46:12.037" endtime="20210115 12:46:12.584"></status>
+</kw>
+<status status="PASS" starttime="20210115 12:46:12.036" endtime="20210115 12:46:12.584"></status>
+</kw>
+<kw name="Location Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<arguments>
+<arg>http://openncart.herokuapp.com/index.php?route=account/login</arg>
+</arguments>
+<msg timestamp="20210115 12:46:12.591" level="INFO">Current location is 'http://openncart.herokuapp.com/index.php?route=account/login'.</msg>
+<status status="PASS" starttime="20210115 12:46:12.584" endtime="20210115 12:46:12.591"></status>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current page title equals ``title``.</doc>
+<arguments>
+<arg>Account Login</arg>
+</arguments>
+<msg timestamp="20210115 12:46:12.596" level="INFO">Page title is 'Account Login'.</msg>
+<status status="PASS" starttime="20210115 12:46:12.591" endtime="20210115 12:46:12.596"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<arguments>
+<arg>login-page-opened.png</arg>
+</arguments>
+<msg timestamp="20210115 12:46:13.081" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Screenshots/login-page-opened.png"&gt;&lt;img src="Screenshots/login-page-opened.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210115 12:46:12.596" endtime="20210115 12:46:13.082"></status>
+</kw>
+<status status="PASS" starttime="20210115 12:46:10.787" endtime="20210115 12:46:13.082" critical="yes"></status>
+</test>
+<test id="s1-s1-t2" name="LoginAllValid">
+<kw name="Set Screenshot Directory" library="SeleniumLibrary" type="setup">
+<doc>Sets the directory for captured screenshots.</doc>
+<arguments>
+<arg>Screenshots</arg>
+</arguments>
+<status status="PASS" starttime="20210115 12:46:13.085" endtime="20210115 12:46:13.085"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>name:email</arg>
+<arg>yura@gmail.com</arg>
+</arguments>
+<msg timestamp="20210115 12:46:13.086" level="INFO">Typing text 'yura@gmail.com' into text field 'name:email'.</msg>
+<status status="PASS" starttime="20210115 12:46:13.086" endtime="20210115 12:46:13.236"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>name:password</arg>
+<arg>password_123</arg>
+</arguments>
+<msg timestamp="20210115 12:46:13.237" level="INFO">Typing text 'password_123' into text field 'name:password'.</msg>
+<status status="PASS" starttime="20210115 12:46:13.236" endtime="20210115 12:46:13.315"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<arguments>
+<arg>before-LoginAllValid.png</arg>
+</arguments>
+<msg timestamp="20210115 12:46:13.791" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Screenshots/before-LoginAllValid.png"&gt;&lt;img src="Screenshots/before-LoginAllValid.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210115 12:46:13.315" endtime="20210115 12:46:13.791"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>class=btn-primary</arg>
+</arguments>
+<msg timestamp="20210115 12:46:13.791" level="INFO">Clicking button 'class=btn-primary'.</msg>
+<status status="PASS" starttime="20210115 12:46:13.791" endtime="20210115 12:46:14.503"></status>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current page title equals ``title``.</doc>
+<arguments>
+<arg>My Account</arg>
+</arguments>
+<msg timestamp="20210115 12:46:14.508" level="INFO">Page title is 'My Account'.</msg>
+<status status="PASS" starttime="20210115 12:46:14.503" endtime="20210115 12:46:14.509"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<arguments>
+<arg>after-LoginAllValid.png</arg>
+</arguments>
+<msg timestamp="20210115 12:46:14.965" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Screenshots/after-LoginAllValid.png"&gt;&lt;img src="Screenshots/after-LoginAllValid.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210115 12:46:14.509" endtime="20210115 12:46:14.965"></status>
+</kw>
+<status status="PASS" starttime="20210115 12:46:13.083" endtime="20210115 12:46:14.966" critical="yes"></status>
+</test>
+<kw name="Close Browser" library="SeleniumLibrary" type="teardown">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210115 12:46:14.967" endtime="20210115 12:46:15.052"></status>
+</kw>
+<status status="PASS" starttime="20210115 12:45:51.356" endtime="20210115 12:46:15.052"></status>
+</suite>
+<suite id="s1-s2" name="RegistrationTesting" source="/Users/oleksandrshpachuk/AQA/Robot/tests/RegistrationTesting.robot">
+<kw name="Open Browser" library="SeleniumLibrary" type="setup">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+</arguments>
+<msg timestamp="20210115 12:46:15.062" level="INFO">Opening browser 'chrome' to base url 'http://openncart.herokuapp.com/'.</msg>
+<status status="PASS" starttime="20210115 12:46:15.061" endtime="20210115 12:46:19.100"></status>
+</kw>
+<test id="s1-s2-t1" name="RegisterButtonClick">
+<kw name="Set Screenshot Directory" library="SeleniumLibrary" type="setup">
+<doc>Sets the directory for captured screenshots.</doc>
+<arguments>
+<arg>Screenshots</arg>
+</arguments>
+<status status="PASS" starttime="20210115 12:46:19.102" endtime="20210115 12:46:19.103"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>class=dropdown</arg>
+</arguments>
+<msg timestamp="20210115 12:46:19.104" level="INFO">Clicking element 'class=dropdown'.</msg>
+<status status="PASS" starttime="20210115 12:46:19.103" endtime="20210115 12:46:19.355"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<arguments>
+<arg>dropdown-click.png</arg>
+</arguments>
+<msg timestamp="20210115 12:46:20.212" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Screenshots/dropdown-click.png"&gt;&lt;img src="Screenshots/dropdown-click.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210115 12:46:19.355" endtime="20210115 12:46:20.212"></status>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<arguments>
+<arg>css:div#top-links li.dropdown a</arg>
+<arg>aria-expanded</arg>
+</arguments>
+<assign>
+<var>${dropdown-opened}</var>
+</assign>
+<msg timestamp="20210115 12:46:20.227" level="INFO">${dropdown-opened} = true</msg>
+<status status="PASS" starttime="20210115 12:46:20.212" endtime="20210115 12:46:20.227"></status>
+</kw>
+<kw name="Log Many" library="BuiltIn">
+<doc>Logs the given messages as separate entries using the INFO level.</doc>
+<arguments>
+<arg>Dropdown is opened:</arg>
+<arg>${dropdown-opened}</arg>
+</arguments>
+<msg timestamp="20210115 12:46:20.228" level="INFO">Dropdown is opened:</msg>
+<msg timestamp="20210115 12:46:20.228" level="INFO">true</msg>
+<status status="PASS" starttime="20210115 12:46:20.227" endtime="20210115 12:46:20.228"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${dropdown-opened}' == 'true'</arg>
+<arg>Click Element</arg>
+<arg>css:ul.dropdown-menu-right &gt; li:first-child</arg>
+</arguments>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>css:ul.dropdown-menu-right &gt; li:first-child</arg>
+</arguments>
+<msg timestamp="20210115 12:46:20.229" level="INFO">Clicking element 'css:ul.dropdown-menu-right &gt; li:first-child'.</msg>
+<status status="PASS" starttime="20210115 12:46:20.229" endtime="20210115 12:46:21.034"></status>
+</kw>
+<status status="PASS" starttime="20210115 12:46:20.228" endtime="20210115 12:46:21.034"></status>
+</kw>
+<kw name="Location Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<arguments>
+<arg>http://openncart.herokuapp.com/index.php?route=account/register</arg>
+</arguments>
+<msg timestamp="20210115 12:46:21.041" level="INFO">Current location is 'http://openncart.herokuapp.com/index.php?route=account/register'.</msg>
+<status status="PASS" starttime="20210115 12:46:21.035" endtime="20210115 12:46:21.041"></status>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current page title equals ``title``.</doc>
+<arguments>
+<arg>Register Account</arg>
+</arguments>
+<msg timestamp="20210115 12:46:21.046" level="INFO">Page title is 'Register Account'.</msg>
+<status status="PASS" starttime="20210115 12:46:21.041" endtime="20210115 12:46:21.046"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<arguments>
+<arg>register-page-opened.png</arg>
+</arguments>
+<msg timestamp="20210115 12:46:21.539" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Screenshots/register-page-opened.png"&gt;&lt;img src="Screenshots/register-page-opened.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210115 12:46:21.046" endtime="20210115 12:46:21.539"></status>
+</kw>
+<status status="PASS" starttime="20210115 12:46:19.101" endtime="20210115 12:46:21.539" critical="yes"></status>
+</test>
+<test id="s1-s2-t2" name="RegisterFirstNameInput">
+<kw name="Set Screenshot Directory" library="SeleniumLibrary" type="setup">
+<doc>Sets the directory for captured screenshots.</doc>
+<arguments>
+<arg>Screenshots</arg>
+</arguments>
+<status status="PASS" starttime="20210115 12:46:21.541" endtime="20210115 12:46:21.541"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>name:firstname</arg>
+<arg>Yura</arg>
+</arguments>
+<msg timestamp="20210115 12:46:21.542" level="INFO">Typing text 'Yura' into text field 'name:firstname'.</msg>
+<status status="PASS" starttime="20210115 12:46:21.541" endtime="20210115 12:46:21.674"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>name:lastname</arg>
+<arg>Paneiko</arg>
+</arguments>
+<msg timestamp="20210115 12:46:21.674" level="INFO">Typing text 'Paneiko' into text field 'name:lastname'.</msg>
+<status status="PASS" starttime="20210115 12:46:21.674" endtime="20210115 12:46:21.754"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>name:email</arg>
+<arg>yura@gmail.com</arg>
+</arguments>
+<msg timestamp="20210115 12:46:21.754" level="INFO">Typing text 'yura@gmail.com' into text field 'name:email'.</msg>
+<status status="PASS" starttime="20210115 12:46:21.754" endtime="20210115 12:46:21.842"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>name:telephone</arg>
+<arg>0630275662</arg>
+</arguments>
+<msg timestamp="20210115 12:46:21.843" level="INFO">Typing text '0630275662' into text field 'name:telephone'.</msg>
+<status status="PASS" starttime="20210115 12:46:21.842" endtime="20210115 12:46:21.923"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>name:address_1</arg>
+<arg>Lviv</arg>
+</arguments>
+<msg timestamp="20210115 12:46:21.924" level="INFO">Typing text 'Lviv' into text field 'name:address_1'.</msg>
+<status status="PASS" starttime="20210115 12:46:21.924" endtime="20210115 12:46:22.005"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>name:city</arg>
+<arg>Lviv</arg>
+</arguments>
+<msg timestamp="20210115 12:46:22.006" level="INFO">Typing text 'Lviv' into text field 'name:city'.</msg>
+<status status="PASS" starttime="20210115 12:46:22.005" endtime="20210115 12:46:22.086"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>name:postcode</arg>
+<arg>79019</arg>
+</arguments>
+<msg timestamp="20210115 12:46:22.087" level="INFO">Typing text '79019' into text field 'name:postcode'.</msg>
+<status status="PASS" starttime="20210115 12:46:22.087" endtime="20210115 12:46:22.162"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>name:lastname</arg>
+<arg>Paneiko</arg>
+</arguments>
+<msg timestamp="20210115 12:46:22.163" level="INFO">Typing text 'Paneiko' into text field 'name:lastname'.</msg>
+<status status="PASS" starttime="20210115 12:46:22.163" endtime="20210115 12:46:22.224"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>name:zone_id</arg>
+</arguments>
+<msg timestamp="20210115 12:46:22.225" level="INFO">Clicking element 'name:zone_id'.</msg>
+<status status="PASS" starttime="20210115 12:46:22.224" endtime="20210115 12:46:22.328"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>css:#input-zone &gt; option:nth-child(5)</arg>
+</arguments>
+<msg timestamp="20210115 12:46:22.329" level="INFO">Clicking element 'css:#input-zone &gt; option:nth-child(5)'.</msg>
+<status status="PASS" starttime="20210115 12:46:22.329" endtime="20210115 12:46:22.660"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>name:password</arg>
+<arg>password_123</arg>
+</arguments>
+<msg timestamp="20210115 12:46:22.661" level="INFO">Typing text 'password_123' into text field 'name:password'.</msg>
+<status status="PASS" starttime="20210115 12:46:22.661" endtime="20210115 12:46:22.985"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>name:confirm</arg>
+<arg>password_123</arg>
+</arguments>
+<msg timestamp="20210115 12:46:22.986" level="INFO">Typing text 'password_123' into text field 'name:confirm'.</msg>
+<status status="PASS" starttime="20210115 12:46:22.985" endtime="20210115 12:46:23.067"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>name:agree</arg>
+</arguments>
+<msg timestamp="20210115 12:46:23.067" level="INFO">Clicking element 'name:agree'.</msg>
+<status status="PASS" starttime="20210115 12:46:23.067" endtime="20210115 12:46:23.114"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>css:#content &gt; form &gt; div &gt; div &gt; input.btn.btn-primary</arg>
+</arguments>
+<msg timestamp="20210115 12:46:23.115" level="INFO">Clicking element 'css:#content &gt; form &gt; div &gt; div &gt; input.btn.btn-primary'.</msg>
+<status status="PASS" starttime="20210115 12:46:23.114" endtime="20210115 12:46:23.886"></status>
+</kw>
+<status status="PASS" starttime="20210115 12:46:21.540" endtime="20210115 12:46:23.887" critical="yes"></status>
+</test>
+<kw name="Close Browser" library="SeleniumLibrary" type="teardown">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210115 12:46:23.889" endtime="20210115 12:46:23.972"></status>
+</kw>
+<status status="PASS" starttime="20210115 12:46:15.056" endtime="20210115 12:46:23.972"></status>
+</suite>
+<suite id="s1-s3" name="SearchAndOrderTesting" source="/Users/oleksandrshpachuk/AQA/Robot/tests/SearchAndOrderTesting.robot">
+<kw name="Open Browser" library="SeleniumLibrary" type="setup">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20210115 12:46:23.980" level="INFO">Opening browser 'chrome' to base url 'http://openncart.herokuapp.com/'.</msg>
+<status status="PASS" starttime="20210115 12:46:23.979" endtime="20210115 12:46:27.799"></status>
+</kw>
+<test id="s1-s3-t1" name="Search">
+<kw name="Set Screenshot Directory" library="SeleniumLibrary" type="setup">
+<doc>Sets the directory for captured screenshots.</doc>
+<arguments>
+<arg>Screenshots</arg>
+</arguments>
+<status status="PASS" starttime="20210115 12:46:27.801" endtime="20210115 12:46:27.801"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210115 12:46:27.802" endtime="20210115 12:46:28.159"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>name:search</arg>
+<arg>Macbook</arg>
+</arguments>
+<msg timestamp="20210115 12:46:28.160" level="INFO">Typing text 'Macbook' into text field 'name:search'.</msg>
+<status status="PASS" starttime="20210115 12:46:28.160" endtime="20210115 12:46:28.301"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>class=btn-default</arg>
+</arguments>
+<msg timestamp="20210115 12:46:28.301" level="INFO">Clicking button 'class=btn-default'.</msg>
+<status status="PASS" starttime="20210115 12:46:28.301" endtime="20210115 12:46:29.600"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id="content"]/div[3]/div[2]/div/div[2]/h4/a</arg>
+</arguments>
+<msg timestamp="20210115 12:46:29.601" level="INFO">Clicking element 'xpath=//*[@id="content"]/div[3]/div[2]/div/div[2]/h4/a'.</msg>
+<status status="PASS" starttime="20210115 12:46:29.601" endtime="20210115 12:46:33.304"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>name:quantity</arg>
+<arg>15</arg>
+</arguments>
+<msg timestamp="20210115 12:46:33.305" level="INFO">Typing text '15' into text field 'name:quantity'.</msg>
+<status status="PASS" starttime="20210115 12:46:33.305" endtime="20210115 12:46:33.380"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id="button-cart"]</arg>
+</arguments>
+<msg timestamp="20210115 12:46:33.381" level="INFO">Clicking element 'xpath=//*[@id="button-cart"]'.</msg>
+<status status="PASS" starttime="20210115 12:46:33.380" endtime="20210115 12:46:33.427"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<arguments>
+<arg>search-result.png</arg>
+</arguments>
+<msg timestamp="20210115 12:46:34.121" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Screenshots/search-result.png"&gt;&lt;img src="Screenshots/search-result.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210115 12:46:33.427" endtime="20210115 12:46:34.121"></status>
+</kw>
+<status status="PASS" starttime="20210115 12:46:27.800" endtime="20210115 12:46:34.121" critical="yes"></status>
+</test>
+<kw name="Close Browser" library="SeleniumLibrary" type="teardown">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210115 12:46:34.122" endtime="20210115 12:46:34.234"></status>
+</kw>
+<status status="PASS" starttime="20210115 12:46:23.976" endtime="20210115 12:46:34.234"></status>
+</suite>
+<status status="PASS" starttime="20210115 12:45:51.331" endtime="20210115 12:46:34.240"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="5" fail="0">Critical Tests</stat>
+<stat pass="5" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="5" fail="0" id="s1" name="Tests">Tests</stat>
+<stat pass="2" fail="0" id="s1-s1" name="LoginTesting">Tests.LoginTesting</stat>
+<stat pass="2" fail="0" id="s1-s2" name="RegistrationTesting">Tests.RegistrationTesting</stat>
+<stat pass="1" fail="0" id="s1-s3" name="SearchAndOrderTesting">Tests.SearchAndOrderTesting</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
